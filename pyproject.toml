@@ -1,0 +1,20 @@
+[project]
+name = "md-to-pdf"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "markdown-it-py>=3.0",
+    "mdit-py-plugins>=0.4",
+    "pygments>=2.17",
+    "playwright>=1.45",
+]
+
+[project.scripts]
+md-to-pdf = "md_to_pdf:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+only-include = ["md_to_pdf.py"]
